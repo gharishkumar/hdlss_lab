@@ -1,0 +1,17 @@
+### Read the SystemVerilog files
+read_verilog -sv /home/students/HDLSS_lab/SISO/hdl/main.sv
+# read_verilog -sv /home/students/HDLSS_lab/IC7402/hdl/and.sv
+
+### Elaborate the design
+hierarchy -top SISO
+
+### procedural elaboration
+#proc
+
+### optimization
+#opt
+
+#short hand synthesis
+synth
+
+show SISO

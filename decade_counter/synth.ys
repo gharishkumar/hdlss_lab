@@ -1,0 +1,40 @@
+### Read the SystemVerilog files
+read_verilog -sv decade_counter.sv
+read_verilog -sv tb_decade_counter.sv
+
+### Elaborate the design
+hierarchy -top tb_decade_counter
+
+### procedural elaboration
+proc
+
+### optimization
+opt
+
+### Perform synthesis
+#synth -top tb_decade_counter
+
+### Write out the netlist (optional, for further use)
+write_verilog -noattr counter_netlist.v
+
+#short hand
+#synth
+
+###for ice 40 FPGA
+synth ice40 -drp
+
+
+###write verilog file
+#write_verilog <op_filename.v>
+
+
+### Run formal verification (optional)
+#show
+
+
+### JSON op
+write_json synth.json
+
+
+
+##yosys -p "prep -top decade_counter; write_json output.json" decade_counter.sv
